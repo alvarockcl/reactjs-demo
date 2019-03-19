@@ -8,14 +8,16 @@ class Hijo extends Component {
   }
 
   handleChange = (name, event) => {
-    this.props.onValueChange(name, event); 
+    if(name === "select-uno"){
+      this.props.onValueChange(name, event); 
+    }
   };
   
   render() {
     return (
       <div>
         <select
-            onChange={e => {this.handleChange("dato",e);}}
+            onChange={e => {this.handleChange("select-uno",e);}}
           >
           <option value="Opcion 1">Opción 1</option>
           <option value="Opcion 2">Opción 2</option>
