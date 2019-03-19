@@ -1,0 +1,41 @@
+PADRE
+
+handleChange = (name, event) => {  // método con parámetros del padre
+
+	.... = event.target.value;
+	
+}
+
+<Componente
+	....
+	....
+	onValueChange={this.handleChange}		// pasando el método del padre
+	....
+	....
+	/>
+
+
+
+
+HIJO
+
+	....
+	....
+
+	handleChange = (name, event) => {
+		this.props.onValueChange(name, event); // método del padre
+	};
+	....
+	....
+  
+<InputBase									// componente en el render
+	
+	....
+	....
+	
+	onChange={e => {
+		this.handleChange("dato", e);
+    }}
+	
+	....
+	....
